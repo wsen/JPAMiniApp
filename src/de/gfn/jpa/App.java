@@ -1,7 +1,8 @@
 package de.gfn.jpa;
 
-import de.gfn.jsp.entity.Scout;
+import de.gfn.jpa.entity.Scout;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -25,17 +26,16 @@ public class App {
 //        s.setFirstname("Peter");
 //        s.setLastname("Parker");
 //        s.setBirthdate(new Date());
-//        
+
         em.getTransaction().begin();
-        //em.persist(s);
+//        em.persist(s);
         
         Scout s = em.find(Scout.class, 1L);
         s.setFirstname("Bob");
-        //System.out.println(s);
+//        System.out.println(s);
         
         em.getTransaction().commit();
         em.close();
-        
     }
     
 }
